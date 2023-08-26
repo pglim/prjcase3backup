@@ -41,7 +41,7 @@ jobs:
     contents: read
     packages: read
     runs-on: ubuntu-latest
-    needs: [ build_image ]
+    # needs: [ build_image ]
     steps:
       - name: Checkout 🛎️
       uses: actions/checkout@v2
