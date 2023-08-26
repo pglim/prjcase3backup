@@ -47,25 +47,25 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Log in to the Container registry 📦
-      uses: docker/login-action@v2
-      with:
-        registry: ${{ env.GITHUB_REGISTRY }}
-        username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.GITHUB_REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Scan Docker image 🐳
-      uses: snyk/actions/docker@master
-      continue-on-error: true
-      with:
-        image: ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:${{ env.DOCKER_IMAGE_TAG }}
-        args: --file=Dockerfile --severity-threshold=high --sarif-file-output=snyk.sarif
-        env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        uses: snyk/actions/docker@master
+        continue-on-error: true
+        with:
+          image: ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:${{ env.DOCKER_IMAGE_TAG }}
+          args: --file=Dockerfile --severity-threshold=high --sarif-file-output=snyk.sarif
+          env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Upload Snyk report as sarif 📦
-      uses: github/codeql-action/upload-sarif@v2
-      with:
-      sarif_file: snyk.sarif
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: snyk.sarif
 
   deploy-to-ecs:
     runs-on: ubuntu-latest
