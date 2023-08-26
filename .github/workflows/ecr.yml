@@ -37,9 +37,9 @@ jobs:
 
   scan_docker_image:
     permissions:
-    id-token: read
-    contents: read
-    packages: read
+      id-token: read
+      contents: read
+      packages: read
     runs-on: ubuntu-latest
     needs: build-and-push-image-to-ecr
     steps:
