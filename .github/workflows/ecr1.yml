@@ -1,5 +1,5 @@
-name: Docker
-run-name: ${{ github.actor }} is running CICD for Nodejs Application with Docker
+name: Dockerv1
+run-name: ${{ github.actor }} is running CICD for Nodejs Application with Docker1
 
 on:
   push:
@@ -41,4 +41,4 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
