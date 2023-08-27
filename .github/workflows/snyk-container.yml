@@ -54,3 +54,4 @@ jobs:
       uses: pglim/prjcase3backup/upload-sarif@v2
       with:
         sarif_file: snyk.sarif
+#
