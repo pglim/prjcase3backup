@@ -1,4 +1,4 @@
-name: CICD for Nodejs Application with Docker1
+name: CICD for Nodejs Application with Docker12
 run-name: ${{ github.actor }} is running CICD for Nodejs Application with Docker
 
 on:
