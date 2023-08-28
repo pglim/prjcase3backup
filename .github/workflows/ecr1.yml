@@ -62,7 +62,7 @@ jobs:
         # or you can signup for free at https://snyk.io/login
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
-        image: ap-southeast-1.console.aws.amazon.com/ecr/repositories/private/255945442255/group2-chat-app/_/image/sha256:1fcced8aa8b41378cd7d21d574d2f7a0330a9bfd5544184efa38ba17e071eecf/details?region=ap-southeast-1
+        image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         args: --file=Dockerfile
     - name: Upload result to GitHub Code Scanning
       uses: github/codeql-action/upload-sarif@v2
