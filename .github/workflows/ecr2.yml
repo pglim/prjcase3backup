@@ -39,7 +39,7 @@ jobs:
       security-events: write # for github/pglim/upload-sarif to upload SARIF results
       actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
     runs-on: ubuntu-latest
-    needs: build-and-push-image-to-ecr1
+    needs: Build and Push Docker Image to ECR
     steps:
     - uses: actions/checkout@v3
     - name: Login to Amazon ECR1
