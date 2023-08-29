@@ -1,4 +1,4 @@
-name: CICD for Nodejs Application with Docker12
+name: CICD for Nodejs Application with Docker123
 on:
   push:
     branches: dev
