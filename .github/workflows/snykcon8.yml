@@ -57,13 +57,13 @@ jobs:
           - name: Login to Amazon ECR
             id: login-ecr
             uses: aws-actions/amazon-ecr-login@v1
-         # - name: Build and push image to AWS ECR
+          - name: Build and push image to AWS ECR
           #  env:
           #    ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
            #   ECR_REPOSITORY: pglim360group2-chat-app
           #    IMAGE_TAG: latest
-          #  run: |
-           #   docker build -t group2chatapp/dockerimagelocal1 .
+            run: |
+              docker build -t group2chatapp/dockerimagelocal1 .
           - name: Run Snyk to check Docker image for vulnerabilities
             # Snyk can be used to break the build when it detects vulnerabilities.
             # In this case we want to upload the issues to GitHub Code Scanning
