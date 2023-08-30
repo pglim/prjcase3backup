@@ -14,16 +14,16 @@ name: CICD for Nodejs Application with Docker123
 on:
   push:
     branches: dev
-    pull_request:
+  pull_request:
         # The branches below must be a subset of the branches above
-        branches: [ "dev" ]
-      schedule:
-        - cron: '43 23 * * 2'
+    branches: [ "dev" ]
+  schedule:
+    - cron: '43 23 * * 2'
 
-      permissions:
-        contents: read # for actions/checkout to fetch code
-        security-events: write # for github/pglim/upload-sarif to upload SARIF results
-        actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
+  permissions:
+    contents: read # for actions/checkout to fetch code
+    security-events: write # for github/pglim/upload-sarif to upload SARIF results
+    actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
 
 jobs:
   build-and-push-image-to-ecr:
