@@ -1,9 +1,10 @@
-name: CICD for Nodejs Application with Docker
+name: CICD for Nodejs Application with Docker8
 run-name: ${{ github.actor }} is running CICD for Nodejs Application with Docker
 
 on:
   push:
-    branches: feature-app
+    #branches: feature-app
+    branches: dev
 
 jobs:
   build-and-push-image-to-ecr:
