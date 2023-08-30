@@ -41,7 +41,7 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker build -t prjcase3/prjimage .
+          #docker build -t prjcase3/prjimage6 .
           
   snykcon6:
     permissions:
@@ -52,7 +52,7 @@ jobs:
     #needs: build-and-push-image-to-ecr6
     steps:
       - name: Build docker
-        run: docker build -t prjcase3/prjimage .
+        run: docker build -t prjcase3/prjimage6 .
       - name: Run Snyk to check Docker image for vulnerabilities
       # Snyk can be used to break the build when it detects vulnerabilities.
       # In this case we want to upload the issues to GitHub Code Scanning
@@ -65,7 +65,7 @@ jobs:
         # or you can signup for free at https://snyk.io/login
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: prjcase3/prjimage
+          image: prjcase3/prjimage6
           args: --file=Dockerfile
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
