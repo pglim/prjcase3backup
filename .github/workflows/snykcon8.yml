@@ -35,7 +35,7 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker build -t group2chatapp/dockerimagelocal .
+          docker build -t group2chatapp/dockerimagelocal1 .
 
   snykcon5:
         permissions:
@@ -62,8 +62,8 @@ jobs:
               ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
               ECR_REPOSITORY: pglim360group2-chat-app
               IMAGE_TAG: latest
-            run: |
-              docker build -t group2chatapp/dockerimagelocal .
+           # run: |
+            #  docker build -t group2chatapp/dockerimagelocal .
           - name: Run Snyk to check Docker image for vulnerabilities
             # Snyk can be used to break the build when it detects vulnerabilities.
             # In this case we want to upload the issues to GitHub Code Scanning
@@ -76,7 +76,7 @@ jobs:
             # or you can signup for free at https://snyk.io/login
               SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
             with:
-              image: group2chatapp/dockerimagelocal
+              image: group2chatapp/dockerimagelocal1
               args: --file=Dockerfile
           - name: Upload result to GitHub Code Scanning
             uses: github/codeql-action/upload-sarif@v2
