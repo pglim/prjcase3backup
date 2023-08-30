@@ -49,7 +49,7 @@ jobs:
       security-events: write # for github/pglim/upload-sarif to upload SARIF results
       actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
     runs-on: ubuntu-latest
-    #needs: build-and-push-image-to-ecr6
+    needs: build-and-push-image-to-ecr6
     steps:
       - name: Build docker
         run: docker build -t prjcase3/prjimage6 .
