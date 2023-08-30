@@ -1,4 +1,4 @@
-name: CICD for Nodejs Application with Docker6
+name: CICD for Nodejs Application with Docker7
 on:
   push:
     branches: dev
@@ -13,7 +13,7 @@ permissions:
   actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
 
 jobs:
-  build-and-push-image-to-ecr6:
+  build-and-push-image-to-ecr7:
     runs-on: ubuntu-latest
     name: Build and Push Docker Image to ECR
     steps:
@@ -43,16 +43,16 @@ jobs:
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           #docker build -t prjcase3/prjimage6 .
           
-  snykcon6:
+  snykcon7:
     permissions:
       contents: read # for actions/checkout to fetch code
       security-events: write # for github/pglim/upload-sarif to upload SARIF results
       actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
     runs-on: ubuntu-latest
-    #needs: build-and-push-image-to-ecr6
+    #needs: build-and-push-image-to-ecr7
     steps:
       - name: Build docker
-        run: docker build -t prjcase3/prjimage6 .
+        run: docker build -t group2-capstone-project/prjimage7 .
       - name: Run Snyk to check Docker image for vulnerabilities
       # Snyk can be used to break the build when it detects vulnerabilities.
       # In this case we want to upload the issues to GitHub Code Scanning
@@ -65,7 +65,7 @@ jobs:
         # or you can signup for free at https://snyk.io/login
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          image: prjcase3/prjimage6
+          image: group2-capstone-project/prjimage7
           args: --file=Dockerfile
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
@@ -73,9 +73,9 @@ jobs:
         with:
           sarif_file: snyk.sarif
  
-  deploy-to-ecs6:
+  deploy-to-ecs7:
     runs-on: ubuntu-latest
-    needs: snykcon6
+    needs: snykcon7
     name: Deploy to ECS
     steps:
       - name: Checkout repo code
