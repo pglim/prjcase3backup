@@ -1,4 +1,4 @@
-name: CICD for Nodejs Application with Docker5
+name: CICD for Nodejs Application with Dockers5
 on:
   push:
     branches: dev
