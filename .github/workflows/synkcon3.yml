@@ -1,16 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# A sample workflow which checks out the code, builds a container
-# image using Docker and scans that image for vulnerabilities using
-# Snyk. The results are then uploaded to GitHub Security Code Scanning
-#
-# For more examples, including how to limit scans to only high-severity
-# issues, monitor images for newly disclosed vulnerabilities in Snyk and
-# fail PR checks for new vulnerabilities, see https://github.com/snyk/actions/
-name: CICD for Nodejs Application with Docker123
+name: CICD for Nodejs Application with Docker3
 on:
   push:
     branches: dev
@@ -19,11 +7,10 @@ on:
     branches: [ "dev" ]
   schedule:
     - cron: '43 23 * * 2'
-
-  permissions:
-    contents: read # for actions/checkout to fetch code
-    security-events: write # for github/pglim/upload-sarif to upload SARIF results
-    actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
+permissions:
+  contents: read # for actions/checkout to fetch code
+  security-events: write # for github/pglim/upload-sarif to upload SARIF results
+  actions: read # only required for a private repository by github/pglim/upload-sarif to get the Action run status
 
 jobs:
   build-and-push-image-to-ecr:
