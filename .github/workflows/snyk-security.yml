@@ -78,3 +78,13 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: snyk-code.sarif
+
+zap-scan:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    name: OWASP ZAP Full Scan
+    steps:
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.7.0
+        with:
+          target: ${{ needs.deploy-to-ecs.outputs.access_url_output }}
