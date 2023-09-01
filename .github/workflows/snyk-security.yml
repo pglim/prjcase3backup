@@ -79,7 +79,7 @@ jobs:
         with:
           sarif_file: snyk-code.sarif
 
-zap-scan:
+  zap-scan:
     runs-on: ubuntu-latest
     permissions: write-all
     name: OWASP ZAP Full Scan
