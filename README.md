@@ -6,7 +6,7 @@
 
 # Company Profile
 AutomateTech Solutions is a cutting-edge startup specializing in DevOps automation and cloud-native solutions. Our team of highly skilled software engineers and DevOps experts is dedicated to streamlineing the release cycle process and enabling rapid and efficient deployment of our software applications.
-
+![Alt text](CICD.png)
 # DevOps Mission Statement
 Our mission is to accelerate software deployment using CI/CD Pipeline so that each release cycle can be released quickly from the development environment, to staging environment and to production environment.
 
