@@ -14,6 +14,12 @@ Repository: https://github.com/Dylon-Chan/group2-capstone-project
 
 The Developers team at Chat Secure is currently working on an exciting project called "Titanium" This project involves the development of a chat application website that implements a docker container with security as first priority.
 
+## Requirement / Criteria for Project Titanium
+1. A typical CICD Pipeline
+2. Implement dependency screening in CI Script
+3. Ensure proper authentication and authorization in each environment in CD Script. (e.g. credentials used for deploying development and production environments should not be the same)
+4. Proper handling of CICD Pipeline Secrets
+
 ## Getting started
 To get the Node server running locally:
 ●	Clone this repo
@@ -107,4 +113,32 @@ env: Set the environment variables.
 These are the jobs defined in main.yml which will be run in GitHub Actions workflow:
 *** Program
 
-Add AWS_ACCESS_KEY_ID, ASW_SECRET_ACCESS_KEY and Snyk Token to GitHub Secrets
+## Step 1: Create main.yml in .github/workflows folder
+
+## Step 2: Add AWS_ACCESS_KEY_ID, ASW_SECRET_ACCESS_KEY and Snyk_Token to GitHub Secrets
+*** Diagram
+
+## Step 3: Create a pull request and commit a merge in GitHub to start the workflow
+*** Diagram
+
+## Lesson Learnt
+1. Team collaboration is critical for the success of the project
+
+2. Repository name is case sensitive and Yaml’s syntax and spacing are important
+
+## Future Enhancement
+1. Explore other security scanning systems such as SonarQube, JFrog, Synopsys, Checkmarx, etc. and explore which is better for which type of scanning.
+
+2. Explore using Jira Service Management as a ticketing system to integrate with GitHub to report issues and follow up
+
+## Conclusion
+
+In this document we cover all aspect of our CI/CD Pipeline, including:
+
+Branching strategy
+GitHub branch creation & protection
+Serverless application deployment
+Unit test
+Package vulnerability scan
+GitHub Actions Workflow
+
