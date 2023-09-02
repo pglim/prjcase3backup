@@ -54,5 +54,8 @@ https://github.com/Dylon-Chan/group2-capstone-project/prod
 pre-deploy to check the application
 npm install to install all required dependencies
 deploy to deploy chat application to development, stage or production respectively
+* Diagram
+
+* 
 
 
