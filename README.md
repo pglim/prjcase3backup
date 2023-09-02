@@ -1,4 +1,4 @@
-# (SCTP) Cloud Infrastructure Engineering Capstone Project Documentation
+# (SCTP 2nd Cohort) Cloud Infrastructure Engineering Capstone Project Documentation
 ## `Case 3 - Securtiy Focused (DevSecOps)`
 ### by Group 2: Chan Weng Siong, Chris Pang, David Suntama, Lim Poh Guan and Ng Poh Leng
 
@@ -110,16 +110,17 @@ run: Runs command line programs.
 
 env: Set the environment variables.
 
-These are the jobs defined in main.yml which will be run in GitHub Actions workflow:
+These are the jobs defined in ecr.yml which will be run in GitHub Actions workflow:
 *** Program
 
-## Step 1: Create main.yml in .github/workflows folder
+## Step 1: Create ecr.yml in .github/workflows folder
+*** Diagram in instruction
 
 ## Step 2: Add AWS_ACCESS_KEY_ID, ASW_SECRET_ACCESS_KEY and Snyk_Token to GitHub Secrets
-*** Diagram
+*** Diagram in instruction
 
 ## Step 3: Create a pull request and commit a merge in GitHub to start the workflow
-*** Diagram
+*** Diagram in instruction
 
 ## Lesson Learnt
 1. Team collaboration is critical for the success of the project
