@@ -58,8 +58,53 @@ https://github.com/Dylon-Chan/group2-capstone-project/prod
 ●	It is typically protected, meaning that direct commits or modifications are restricted, and changes can only be introduced through pull requests after thorough code review and testing.
 
 ## Branch Creation
+*** Program
+
 ## Branch Protection
+*** Diagram
 
 ## Chat Application
+*** Program
+
+Steps to create
+
+## Unit tests
+*** Program
+
+## Vulnerability Scan
 
 
+## GitHub Actions
+We use GitHub Actions to automate our CI/CD Pipeline. Our CI/CD Pipeline build, test, and deploy code right from GitHub. We make code reviews and branch management fron within GitHub.
+
+## About GitHub Actions Workflows
+A workflow is a configurable automated process that will run one or more jobs. Workflows are defined by a YAML file checked in to our repository and will run when triggered by an event in our repository, or they can be triggered manually, or at a defined schedule.
+
+We use event to trigger the workflow in our CI/CD Pipeline.
+
+Earlier we run unit test, vulnerability scan and deploy serverless application in local environment. It is now time to set up a CI/CP Pipeline that run all these jobs automatically whenever a code change is push to the GitHub respository.
+
+The following outline the steps required to create a GitHub Actions workflow.
+*** Program
+
+## Workflow Syntax
+name: The name of the workflow.
+
+on: The type of event that can run the workflow. This workflow will only run when there is a git push to either the main or other branch.
+
+jobs: A workflow consists of one or more jobs. Jobs run in parallel unless a needs keyword is used. Each job runs in a runner environment specified by runs-on.
+
+steps: A sequence of tasks to be carried out.
+
+uses: Selects an action to run as part of a step in your job. An action is a reusable unit of code.
+
+with: A map of input parameters.
+
+run: Runs command line programs.
+
+env: Set the environment variables.
+
+These are the jobs defined in main.yml which will be run in GitHub Actions workflow:
+*** Program
+
+Add AWS_ACCESS_KEY_ID, ASW_SECRET_ACCESS_KEY and Snyk Token to GitHub Secrets
