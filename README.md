@@ -27,6 +27,13 @@ To get the Node server running locally:
 ## Application Structure
 ●	index.js - The entry point to our application. This file for unit testing. It also requires the routes and models we'll be using in the application.
 
+
+## CICD Pipeline
+pre-deploy to check the application
+npm install to install all required dependencies
+deploy to deploy chat application to development, stage or production respectively
+*** Diagram
+
 ## Branching Strategies
 
 ### Development Branch (Dev)
@@ -50,12 +57,9 @@ https://github.com/Dylon-Chan/group2-capstone-project/prod
 ●	Only fully reviewed and approved code changes are merged into the main branch.
 ●	It is typically protected, meaning that direct commits or modifications are restricted, and changes can only be introduced through pull requests after thorough code review and testing.
 
-## CICD Pipeline
-pre-deploy to check the application
-npm install to install all required dependencies
-deploy to deploy chat application to development, stage or production respectively
-* Diagram
+## Branch Creation
+## Branch Protection
 
-* 
+## Chat Application
 
 
